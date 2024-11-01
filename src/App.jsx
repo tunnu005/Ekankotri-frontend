@@ -46,7 +46,7 @@ function App() {
       <Route path="/" element={ isAuthenticated ? <Navigate to={"/main"}/>:<Index />} />
       
       <Route element={<AuthenticatedLayout/>}>
-       <Route path="/main" element={<Mainpage />} />
+      <Route path="/main" element={<Mainpage />} />
       </Route>
       <Route path="/preview" element={<Preview />} />
       <Route path='/final' element={<Final/>} />
