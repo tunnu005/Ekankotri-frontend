@@ -35,7 +35,7 @@ import AdminPanel from './components/Mainpage/AdminPanel';
 function App() {
   
   const { isAuthenticated} = useContext(AuthContext)
-  console.log(isAuthenticated)
+  console.log('isAuthenticated',isAuthenticated)
   // const {authUser}=useAuthContext();
   // console.log(authUser);
   return (
