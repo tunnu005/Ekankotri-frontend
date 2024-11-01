@@ -1,0 +1,65 @@
+@font-face {
+    font-family: GreatVibes;
+    src: url('../../assets/fonts/GreatVibes-Regular.ttf');
+    
+   
+  }
+  @font-face {
+    font-family: Glowbloomper;
+    src: url('../../assets/fonts/GlowbloompersonaluseItalic-RpzjA.otf');
+    
+   
+  }
+  @font-face {
+    font-family: Creation;
+    src: url('../../assets/fonts/Creattion-Demo.otf');
+    
+   
+  }
+  @font-face {
+    font-family: Angle;
+    src: url('../../assets/fonts/AngelDemoRegular-p7GaR.otf');
+    
+   
+  }
+  
+  @font-face {
+    font-family: Katerlin;
+    src: url('../../assets/fonts/Katerlin-51zjB.ttf');
+    
+   
+  }
+  
+  @font-face {
+    font-family: Geraldine;
+    src: url('../../assets/fonts/GeraldinePersonalUseItalic-PK12m.ttf');
+    
+   
+  }
+  
+  @font-face {
+    font-family: Loveline;
+    src: url('../../assets/fonts/LovelineGlamour-owdE0.ttf');
+    
+   
+  }
+  
+  @font-face {
+    font-family: lucy;
+    src: url('../../assets/fonts/LucySaidOkPersonalUseItalic-OV9ee.ttf');
+    
+   
+  }
+  
+  .font{
+    font-family: Lucy;
+  }
+  .font1{
+    font-family: GreatVibes;
+  }
+  .font2{
+    font-family: Geraldine;
+  }
+  .font3{
+    font-family: Angle;
+  }

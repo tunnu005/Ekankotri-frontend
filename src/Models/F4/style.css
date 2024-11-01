@@ -1,0 +1,47 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: #fff; */
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+.scrollbar{
+
+}
+.scrollbar::-webkit-scrollbar{
+  display: none;
+}
+  
+.text-gradient1 {
+  background: linear-gradient(30deg, rgb(245, 232, 91),#efe80b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient2 {
+  background: linear-gradient(60deg, rgb(240, 230, 120),#ebce57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient3 {
+  background: linear-gradient(60deg, rgb(236, 125, 236),#49344a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
