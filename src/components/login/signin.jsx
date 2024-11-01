@@ -22,7 +22,7 @@ const Signin = () => {
     e.preventDefault();
     console.log("Logging in with:", { username, password });
     const response= await login(username,password)
-    console.log("fethced success", response.success);
+    console.log("fethced success : ", response.success);
     setUsername("");
     setPassword("");
     if(response.success)
