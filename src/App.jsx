@@ -11,10 +11,10 @@ import Post from './components/Admin/Post'
 import Forget from './components/Forget'
 import Index from './screens/Index'
 // import Model from './screens/model';
-import Middle1 from './Models/F3/middle1';
+// import Middle1 from './Models/F3/middle1';
 // import Model3 from './Models/F3/mainpage';
 
-import { Model3router } from './AppRouting';
+// import { Model3router } from './AppRouting';
 import Model from './screens/model';
 import Form3 from './components/Form/form';
 import Card from './screens/Display_userCard';
@@ -57,7 +57,7 @@ function App() {
       <Route path='/admin' element={<AdminPanel/>} />
 
       </Route>
-      
+
       <Route path="/main/:modelId" element={<Form3 />} />
       {/* <Route path="formtext" element={<WeddingPlannerForm/>} /> */}
       {/* <Route path='/preview' element={<Preview/>} /> */}
