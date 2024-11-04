@@ -17,7 +17,7 @@ const Navbar = () => {
     // const check = Cookies.remove('token');
 
     try {
-      const response = await axios.post(`${server}/api/users/logout`, {}, { withCredentials: true });
+      const response = await axios.post(`${server}/api/user/logout`, {}, { withCredentials: true });
       setIsAuthenticated(false);
       console.log('handleSignout2')
       console.log('check : ', check);
