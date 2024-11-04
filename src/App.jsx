@@ -44,17 +44,22 @@ function App() {
     <Routes>
 
       <Route path="/" element={ isAuthenticated ? <Navigate to={"/main"}/>:<Index />} />
-      
+      <Route path="/signUp" element={ isAuthenticated ? <Navigate to={"/main"}/>:<Login />} />
+      <Route path="/forget" element={<Forget />} />
+      <Route path="/signin" element={isAuthenticated? <Navigate to={"/main"}/>:<Signin />} /> 
       <Route element={<AuthenticatedLayout/>}>
       <Route path="/main" element={<Mainpage />} />
       
       <Route path="/preview" element={<Preview />} />
       <Route path='/final' element={<Final/>} />
-      </Route>
+      <Route path="/main/:modelId" element={<Form3 />} />
       <Route path="/general" element={< WeddingPlannerForm/>} />
-      <Route path="formtext" element={<WeddingPlannerForm/>} />
-      <Route path='/preview' element={<Preview/>} />
-      <Route path='/preview/model2' element={<Preview/>} />
+      <Route path='/admin' element={<AdminPanel/>} />
+      
+      </Route>
+      {/* <Route path="formtext" element={<WeddingPlannerForm/>} /> */}
+      {/* <Route path='/preview' element={<Preview/>} /> */}
+      {/* <Route path='/preview/model2' element={<Preview/>} />
       <Route path='/preview/model4' element={<Preview/>} />
       <Route path = '/:id' element={<UserDisplay/>} />
       <Route path='/preview/model3' element={<Preview/>} >
@@ -62,21 +67,19 @@ function App() {
               <Route key={index} path={route.path} element={route.component} />
             ))}
         </Route>
-        <Route path='/admin' element={<AdminPanel/>} />
-      <Route path="/Create" element={<Create />} />
-      <Route path="/More" element={<Post />} />
-      <Route path="/show" element={<Show />} >
+        */}
+      {/* <Route path="/Create" element={<Create />} /> */}
+      {/* <Route path="/More" element={<Post />} /> */}
+      {/* <Route path="/show" element={<Show />} >
         <Route path='model3' element={<Model3/>} />
         <Route path='model1' element={<Model1/>} />
         <Route path='model2' element={<Model2/>} />
         <Route path='model4' element={<Model4/>} />
-      </Route>
-      <Route path="/signUp" element={ isAuthenticated ? <Navigate to={"/main"}/>:<Login />} />
-      <Route path="/forget" element={<Forget />} />
-      <Route path="/signin" element={isAuthenticated? <Navigate to={"/main"}/>:<Signin />} /> 
+      </Route> */}
+     
       {/* <Route path="/main/model1" element={<Form3 Model={Model1} Modelname={'model1'} Formname={GeneralWedding}/>} /> */}
       {/* <Route path="/main/model2" element={<Form3 Model={Model2} Modelname={'model2'} Formname={GeneralWedding}/>} /> */}
-      <Route path="/main/:modelId" element={<Form3 />} />
+      
       {/* <Route path='/main/model3' element={<Form3 Model={Model3} Modelname={'model3'} Formname={Model3form}/>} >
             {/* <Route path='map' element={<Map/>} />
             <Route path='album' element={<Album/>} />
@@ -85,13 +88,13 @@ function App() {
               <Route key={index} path={route.path} element={route.component} />
             ))}   */}
       {/* </Route>  */} 
-      <Route path='/user/:id/Model1' element={<Card Model={Model1}/>} />
+      {/* <Route path='/user/:id/Model1' element={<Card Model={Model1}/>} />
       <Route path='/user/:id/Model2' element={<Card Model={Model2}/>} />
       <Route path='/user/:id/Model3' element={<Card Model={Model3}/>} >
       {Model3router.map((route,index)=>(
               <Route key={index} path={route.path} element={route.component} />
             ))} 
-      </Route>
+      </Route> */}
       
 
 
