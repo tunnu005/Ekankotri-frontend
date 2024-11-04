@@ -11,9 +11,9 @@ function AuthenticatedLayout() {
   console.log('AuthenticatedLayout1');
   useEffect(()=>{
     console.log('AuthenticatedLayout useEffect');
-    const token = Cookies.get('token');
-    console.log('AuthenticatedLayout token : ',token);
-    if(token){
+    // const token = Cookies.get('token');
+    // console.log('AuthenticatedLayout token : ',token);
+    
         axios.get(`${server}/api/user/verifyToken`, {
            withCredentials: true,
           })
@@ -27,7 +27,7 @@ function AuthenticatedLayout() {
             console.error('Token verification failed:', error);
             setIsAuthenticated(false);
           });
-    }
+    
 },[setIsAuthenticated]);
 
 
