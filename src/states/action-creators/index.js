@@ -1,4 +1,5 @@
 import { server } from "../api";
+
 import axios from "axios";
 
 export const signup = async (email, password) => {
