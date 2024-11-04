@@ -52,11 +52,12 @@ function App() {
       
       <Route path="/preview" element={<Preview />} />
       <Route path='/final' element={<Final/>} />
-      <Route path="/main/:modelId" element={<Form3 />} />
+      
       <Route path="/general" element={< WeddingPlannerForm/>} />
       <Route path='/admin' element={<AdminPanel/>} />
-      
+
       </Route>
+      <Route path="/main/:modelId" element={<Form3 />} />
       {/* <Route path="formtext" element={<WeddingPlannerForm/>} /> */}
       {/* <Route path='/preview' element={<Preview/>} /> */}
       {/* <Route path='/preview/model2' element={<Preview/>} />
