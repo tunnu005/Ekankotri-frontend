@@ -1,22 +1,12 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
 import { signup } from "../../states/action-creators";
-import { useAuthContext } from "../../context/useAuthcontext";
-
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 
-
-
 const Signup = () => {
-
   const navigate = useNavigate();
-  // const { message,auth } = useSelector((state) => state.user);
-
-
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -41,85 +31,73 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     if (password !== repeatPassword) {
-      toast("Password not match", {
+      toast("Passwords do not match", {
         action: {
           label: "Okay",
-          onClick: () => console.log("!Password")
+          onClick: () => console.log("Password mismatch")
         }
-      })
+      });
       return;
     }
     const resp = await signup(email, password);
-    console.log('fetch success')
-    // console.log(message,auth)  
-    console.log('resp : ',resp);
+    setEmail("");
+    setPassword("");
+    setRepeatPassword("");
 
-    setEmail("")
-    setPassword("")
-    setRepeatPassword("")
-
-    if(resp.status === 201){
-      navigate('/main')
-    }else{
-      toast("User Already exist", {
+    if (resp.status === 201) {
+      navigate('/main');
+    } else {
+      toast("User Already Exists", {
         action: {
           label: "Okay",
-          onClick: () => console.log("!User")
+          onClick: () => console.log("User exists")
         }
-      })
-      return
+      });
     }
-
   };
 
-
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-white text-center w-full sm:max-w-md mx-auto p-4">
-      <div className="bg-black opacity-80  p-6 rounded-lg">
-        <div id="typewriter" className="font-mono text-start mb-6"></div>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-500 to-indigo-600 text-white">
+      <div className="bg-black bg-opacity-80 p-6 rounded-lg max-w-md w-full mx-4 text-center">
+        <div id="typewriter" className="font-mono text-start mb-6 text-lg"></div>
 
-        {/* Conditional rendering of form based on hideForm state */}
-        <div className="text-black ">
-          {!hideForm && (
-            <form onSubmit={handleSignup}>
-              <div className="mb-4">
-                <input
-                  type="text"
-                  placeholder="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-gray-200 rounded-lg p-2 w-full"
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="bg-gray-200 rounded-lg p-2 w-full"
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  value={repeatPassword}
-                  onChange={(e) => setRepeatPassword(e.target.value)}
-                  className="bg-gray-200 rounded-lg p-2 w-full"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-300 text-white rounded-lg px-4 py-2 mt-4"
-
-              >
-                Sign Up
-              </button>
-            </form>
-          )}
-        </div>
+        {!hideForm && (
+          <form onSubmit={handleSignup}>
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-gray-200 rounded-lg p-2 w-full text-black"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="bg-gray-200 rounded-lg p-2 w-full text-black"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={repeatPassword}
+                onChange={(e) => setRepeatPassword(e.target.value)}
+                className="bg-gray-200 rounded-lg p-2 w-full text-black"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-400 text-white rounded-lg px-4 py-2 w-full"
+            >
+              Sign Up
+            </button>
+          </form>
+        )}
       </div>
       <Toaster />
     </div>
