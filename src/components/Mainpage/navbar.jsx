@@ -3,20 +3,29 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../login/authcontextprovider';
 import Cookies from 'js-cookie';
 import React, { useContext, useState } from 'react';
+import axios from 'axios';
+import { server } from '@/states/api';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { setIsAuthenticated } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSignout = () => {
+  const handleSignout = async () => {
     console.log('handleSignout1')
-    console.log(Cookies.get('token'));
-    const check = Cookies.remove('token');
-    console.log('handleSignout2')
-    console.log('check : ',check);
-    setIsAuthenticated(false);
-    navigate('/signin'); // Redirect to login or another page after sign out if needed
+    // console.log(Cookies.get('token'));
+    // const check = Cookies.remove('token');
+
+    try {
+      const response = await axios.post(`${server}/api/users/logout`, {}, { withCredentials: true });
+      setIsAuthenticated(false);
+      console.log('handleSignout2')
+      console.log('check : ', check);
+
+      navigate('/signin');
+    } catch (error) {
+      console.error("Sign out failed", error);
+    }
   };
 
   return (

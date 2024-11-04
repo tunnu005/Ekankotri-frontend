@@ -9,8 +9,8 @@ export const AuthProvider = ({children}) =>{
     const[isAuthenticated,setIsAuthenticated] = useState(false);
     console.log('AuthProvider1')
     useEffect(()=>{
-        const token = Cookies.get('token');
-        if(token){
+       
+        
             axios.get(`${server}/api/user/verifyToken`, {
                withCredentials: true,
               })
@@ -24,7 +24,7 @@ export const AuthProvider = ({children}) =>{
                 console.error('Token verification failed:', error);
                 setIsAuthenticated(false);
               });
-        }
+        
     },[]);
 
     return(
