@@ -10,7 +10,9 @@ function AuthenticatedLayout() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   console.log('AuthenticatedLayout1');
   useEffect(()=>{
+    console.log('AuthenticatedLayout useEffect');
     const token = Cookies.get('token');
+    console.log('AuthenticatedLayout token : ',token);
     if(token){
         axios.get(`${server}/api/user/verifyToken`, {
            withCredentials: true,
