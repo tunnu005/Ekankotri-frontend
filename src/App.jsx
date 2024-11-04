@@ -57,6 +57,7 @@ function App() {
       <Route path='/admin' element={<AdminPanel/>} />
 
       </Route>
+      
       <Route path="/main/:modelId" element={<Form3 />} />
       {/* <Route path="formtext" element={<WeddingPlannerForm/>} /> */}
       {/* <Route path='/preview' element={<Preview/>} /> */}
