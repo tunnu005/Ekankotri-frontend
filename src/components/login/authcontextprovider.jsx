@@ -7,7 +7,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({children}) =>{
     const[isAuthenticated,setIsAuthenticated] = useState(false);
-
+    console.log('AuthProvider1')
     useEffect(()=>{
         const token = Cookies.get('token');
         if(token){
@@ -16,6 +16,7 @@ export const AuthProvider = ({children}) =>{
               })
               .then(response => {
                 if (response.status === 200) {
+                  console.log('AuthProvider2')
                   setIsAuthenticated(true);
                 }
               })

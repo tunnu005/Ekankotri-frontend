@@ -8,7 +8,7 @@ import { server } from '../../states/api'
 
 function AuthenticatedLayout() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-
+  console.log('AuthenticatedLayout1');
   useEffect(()=>{
     const token = Cookies.get('token');
     if(token){
@@ -18,6 +18,7 @@ function AuthenticatedLayout() {
           .then(response => {
             if (response.status === 200) {
               setIsAuthenticated(true);
+              console.log('AuthenticatedLayout2');
             }
           })
           .catch(error => {

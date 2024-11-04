@@ -10,7 +10,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSignout = () => {
-    Cookies.remove('token');
+    console.log('handleSignout1')
+    console.log(Cookies.get('token'));
+    const check = Cookies.remove('token');
+    console.log('handleSignout2')
+    console.log('check : ',check);
     setIsAuthenticated(false);
     navigate('/signin'); // Redirect to login or another page after sign out if needed
   };
