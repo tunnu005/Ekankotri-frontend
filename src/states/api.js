@@ -1,5 +1,5 @@
-export const server = "http://localhost:8000";
-
+// export const server = "http://localhost:8000";
+export const serve = "https://ekankotri-backend.onrender.com"
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
