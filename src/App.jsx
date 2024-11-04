@@ -47,7 +47,7 @@ function App() {
       
       <Route element={<AuthenticatedLayout/>}>
       <Route path="/main" element={<Mainpage />} />
-      </Route>
+     
       <Route path="/preview" element={<Preview />} />
       <Route path='/final' element={<Final/>} />
       <Route path="/general" element={< WeddingPlannerForm/>} />
@@ -91,7 +91,7 @@ function App() {
               <Route key={index} path={route.path} element={route.component} />
             ))} 
       </Route>
-
+      </Route>
 
 
     </Routes>
