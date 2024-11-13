@@ -20,7 +20,7 @@ const Navbar = () => {
       const response = await axios.post(`${server}/api/user/logout`, {}, { withCredentials: true });
       setIsAuthenticated(false);
       console.log('handleSignout2')
-      console.log('check : ', check);
+      // console.log('check : ', check);
 
       navigate('/signin');
     } catch (error) {

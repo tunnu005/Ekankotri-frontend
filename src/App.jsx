@@ -57,13 +57,13 @@ function App() {
       <Route path='/admin' element={<AdminPanel/>} />
 
       </Route>
-
+      <Route path = '/:id' element={<UserDisplay/>} />
       <Route path="/main/:modelId" element={<Form3 />} />
       {/* <Route path="formtext" element={<WeddingPlannerForm/>} /> */}
       {/* <Route path='/preview' element={<Preview/>} /> */}
       {/* <Route path='/preview/model2' element={<Preview/>} />
       <Route path='/preview/model4' element={<Preview/>} />
-      <Route path = '/:id' element={<UserDisplay/>} />
+     
       <Route path='/preview/model3' element={<Preview/>} >
       {Model3router.map((route,index)=>(
               <Route key={index} path={route.path} element={route.component} />

@@ -51,6 +51,8 @@ import { data } from '../../data/dummydata.js'
 import React from 'react'
 import Model4 from '@/Models/F4/mainpage'
 import { Model3 } from '@/exports/exportsModule'
+import Model5 from '@/Models/F5/mainpage5'
+import Model6 from '@/Models/F6/mainpage6'
 
 const Delevlopment = () => {
   return (
@@ -74,8 +76,8 @@ const Form3 = () => {
         {
           modelId === 'Classic and Elegant' ? <Model4 data={data} /> :
             modelId === 'Elegance in Bloom' ? <Model3 data={data} /> :
-              modelId === 'Eternal Bloom' ? <Delevlopment /> :
-                modelId === 'Modern Minimalist Theme' ? <Delevlopment /> :
+              modelId === 'Eternal Bloom' ?   <Model5/> :
+                modelId === 'Modern Minimalist Theme' ? <Model6/> :
                   modelId === 'Vintage Art Deco Theme' ? <Delevlopment /> :
                     modelId === 'Rustic and Bohemian Theme' ? <Delevlopment /> :
                       modelId === 'Romantic Watercolor Theme' ? <Delevlopment /> :

@@ -1,9 +1,10 @@
 import React from 'react'
+import WeddingCard from './maincomp'
 
-const mainpage5 = () => {
+const Model5 = () => {
   return (
-    <div>mainpage5</div>
+    <div><WeddingCard/></div>
   )
 }
 
-export default mainpage5
+export default Model5
